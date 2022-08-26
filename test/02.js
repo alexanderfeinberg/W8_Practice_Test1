@@ -8,26 +8,26 @@ const solutions = require('./utils/hashed-answers.json');
 const solution = solutions[questionKey];
 
 describe ("02 - Form submission for adding a color", function () {
-  
+
   describe('Request', function() {
     it('should have the appropriate request method', function (done) {
       const test = compareHash(solution.request, answer.request, 'method');
       if (test) return done();
       else return done(new RequestError('method'));
     });
-  
+
     it('it should have the appropriate request URL', function (done) {
       const test = compareHash(solution.request, answer.request, 'URL');
       if (test) return done();
       else return done(new RequestError('URL'));
     });
-  
+
     it('it should have NECESSARY request headers', function (done) {
       const test = compareHash(solution.request, answer.request, 'headers');
       if (test) return done();
       else return done(new RequestError('headers'));
     });
-  
+
     it('it should have the appropriate request body', function (done) {
       const test = compareHash(solution.request, answer.request, 'body');
       if (test) return done();
